@@ -90,6 +90,9 @@ class Pack implements \Iterator, \Countable, \ArrayAccess, SortableCardInterface
         return isset($this->cards[$offset]) ? $this->cards[$offset] : null;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public function renderHeadline()
     {
         print "{$this->getCardType()->getType()}: contains " . count($this) . ' width a depth of ' . $this->getCardType()->getPackDepth().'<br>';
@@ -98,7 +101,8 @@ class Pack implements \Iterator, \Countable, \ArrayAccess, SortableCardInterface
     /**
      * {@inheritDoc}
      */
-    public function bgSort() {
+    public function bgSort()
+    {
         // Rearrange the contents of the pack based on the bg colour 
         $tmp = array();
         
@@ -126,16 +130,5 @@ class Pack implements \Iterator, \Countable, \ArrayAccess, SortableCardInterface
                 }
             }
         }
-    }
-    
-    /**
-     * Calculate the total depth of cards in a pack
-     */
-    public function get_depth() {
-        foreach ($this as $card) {
-            $depth += $card->get_depth();
-        }
-        
-        return $depth;
     }
 }

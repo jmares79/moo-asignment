@@ -23,6 +23,11 @@ class CardController
         $this->packs = $packs;
     }
 
+    public function getPacks()
+    {
+        return $this->packs;
+    }
+
     /**
      * Execute the printing of the cards, in the loaded packs, into the screen
      */
@@ -37,7 +42,7 @@ class CardController
         foreach ($this->packs as $pack) {
             for ($i = 0; $i < $pack->getPackMax(); $i++) {
                 $card = new Card($pack->getCardType());
-                
+
                 $color = Utils::greyScaleRandomColourGenerator();
                 $card->setBgColour($color);
                 $card->setText(self::PACK_NAME . ' ' . $i);

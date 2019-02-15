@@ -2,6 +2,9 @@
 
 namespace Moo\card;
 
+/**
+ * Class to handle card types
+ */
 class CardType
 {
     /**
@@ -15,7 +18,7 @@ class CardType
     protected $height = null;
     
     /**
-     * @var Depth of a card
+     * @var string Depth of a card
      */
     protected $depth = null;
 
@@ -30,7 +33,7 @@ class CardType
     protected $text = '';
 
     /**
-     * @var string The text of a card
+     * @var string The type of a card
      */
     protected $type = '';
 

@@ -11,4 +11,3 @@ $businessCardPack = new Moo\pack\Pack($businessCardType, true);
 $cardController = new Moo\CardController(array($miniCardPack, $businessCardPack));
 
 $cardController->printCards();
-
